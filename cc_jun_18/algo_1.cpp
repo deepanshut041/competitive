@@ -1,39 +1,42 @@
-
-
 #include <iostream>
 #include <string>
+#include <vector>
 
 using namespace std;
 
-struct constraint
-{
-    int N;
-    int A;
-    int B;
-};
-
 class Algo1
 {
-  private:
-    int dice_faces[];
 
   public:
-    void print_name(string s)
+    float p_cal(vector<int> faces, int a, int b)
     {
-        string s2;
-        cout << s << "\n";
-        getline(cin, s2);
-        cout << s2 << "\n";
+        int ct1 = 0, ct2 = 0;
+        std::vector<int>::iterator it;
+        for (it = faces.begin(); it != faces.end(); ++it)
+        {
+            ct1 += (a == *it);
+            ct2 += (b == *it);
+        }
+        return  ((float) ct1 / faces.size()) * ((float) ct2 / faces.size());
     }
 
   public:
-    void input()
+    void main()
     {
         int test_cases;
         cin >> test_cases;
         for (int i = 0; i < test_cases; i++)
         {
-            cout << i << "\n";
+            int n, a, b;
+            cin >> n >> a >> b;
+            vector<int> faces;
+            for (int j = 0; j < n; j++)
+            {
+                int inp;
+                cin >> inp;
+                faces.push_back(inp);
+            }
+            cout << p_cal(faces, a, b) << "\n";
         }
     }
 };
@@ -41,6 +44,6 @@ class Algo1
 int main()
 {
     Algo1 algo;
-    algo.input();
+    algo.main();
     return 0;
 }
