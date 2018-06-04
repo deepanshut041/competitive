@@ -15,57 +15,95 @@ class Algo1
         {
             return count;
         }
-        int num = decToBinary(a, a > b, b);
+        int num = decToBinary(a, b);
         count++;
         distance(num + 1, b, count);
     }
 
   public:
-    int decToBinary(int n, bool a_g_b, int b)
+    int decToBinary(int a, int b)
     {
-        cout << n << "\n";
-        int sum = 0, two_power = 0, max_count = 0;
-        vector<bool> binary_num;
-        while (n > 0)
+        int sum = 0, b_one = 0, b_zero = 0, a_one = 0, a_zero = 0;
+        vector<bool> binary_b, binary_new, binary_a;
+        while (b > 0 || a > 0)
         {
-            binary_num.push_back(n % 2 != 0);
-            n = n / 2;
-        }
+            if (a % 2 != 0 && a > 0)
+            {
+                binary_a.push_back(true);
+                a_one++;
+            }
 
-        while (b > 0)
-        {
-            max_count++;
+            else
+            {
+                binary_a.push_back(false);
+                a_zero++;
+            }
+
+            if (b % 2 != 0 && b > 0)
+            {
+                binary_b.push_back(true);
+            }
+            else
+            {
+                binary_b.push_back(false);
+            }
+
+            a = a / 2;
             b = b / 2;
         }
 
-        if (a_g_b == true)
+        std::vector<bool>::iterator it2;
+        for (it2 = binary_b.begin(); it2 != binary_b.end(); ++it2)
         {
-            two_power = 0;
-            std::vector<bool>::iterator it;
-            for (it = binary_num.begin(); it != binary_num.end(); ++it)
+
+            if (*it2 == true && a_one > 0)
             {
-                if (*it == true)
-                {
-                    sum += pow(2, two_power);
-                    two_power++;
-                }
+                binary_new.push_back(true);
+                a_one--;
+            }
+            else if (*it2 == false && a_zero > 0)
+            {
+                binary_new.push_back(false);
+                a_zero--;
+            }
+            else if (*it2 == true && a_one == 0)
+            {
+                binary_new.push_back(false);
+            }
+            else if (*it2 == false && a_zero == 0)
+            {
+                binary_new.push_back(true);
+            }
+            else{
+
             }
         }
-        else
+
+        for (int i = 0; i < binary_new.size(); i++)
         {
-            two_power = max_count - 1;
-            std::vector<bool>::iterator it;
-            for (it = binary_num.begin(); it != binary_num.end(); ++it)
+
+            if (binary_new[i] == true)
             {
-                if (*it == true)
-                {
-                    sum += pow(2, two_power);
-                    two_power--;
-                }
+                sum += pow(2, i);
             }
         }
-        binary_num.clear();
+        print_vector(binary_b);
+        print_vector(binary_a);
+        print_vector(binary_new);
+        cout << "\n" << sum << "\n" << "\n";
+        cin >> a;
         return sum;
+    }
+
+  public:
+    void print_vector(vector<bool> binary_b)
+    {
+        std::vector<bool>::iterator it;
+        for (it = binary_b.begin(); it != binary_b.end(); ++it)
+        {
+            cout << *it;
+        }
+        cout << "\n";
     }
 
   public:
