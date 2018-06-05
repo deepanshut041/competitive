@@ -15,13 +15,19 @@ class Algo1
         {
             return count;
         }
-        int num = decToBinary(a, b);
+        int num = decToBinary(a, b, a > b);
+        count++;
+        if (num == b)
+        {
+            return count;
+        }
+        count++;
         count++;
         distance(num + 1, b, count);
     }
 
   public:
-    int decToBinary(int a, int b)
+    int decToBinary(int a, int b, bool a_g_b)
     {
         int sum = 0, b_one = 0, b_zero = 0, a_one = 0, a_zero = 0;
         vector<bool> binary_b, binary_new, binary_a;
@@ -47,35 +53,67 @@ class Algo1
             {
                 binary_b.push_back(false);
             }
-
+            binary_new.push_back(false);
             a = a / 2;
             b = b / 2;
         }
 
-        std::vector<bool>::iterator it2;
-        for (it2 = binary_b.begin(); it2 != binary_b.end(); ++it2)
+        if (a_g_b == true)
         {
+            binary_new.clear();
+            std::vector<bool>::iterator it2;
+            for (it2 = binary_b.begin(); it2 != binary_b.end(); ++it2)
+            {
 
-            if (*it2 == true && a_one > 0)
-            {
-                binary_new.push_back(true);
-                a_one--;
+                if (*it2 == true && a_one > 0)
+                {
+                    binary_new.push_back(true);
+                    a_one--;
+                }
+                else if (*it2 == false && a_zero > 0)
+                {
+                    binary_new.push_back(false);
+                    a_zero--;
+                }
+                else if (*it2 == true && a_one == 0)
+                {
+                    binary_new.push_back(false);
+                }
+                else if (*it2 == false && a_zero == 0)
+                {
+                    binary_new.push_back(true);
+                }
+                else
+                {
+                }
             }
-            else if (*it2 == false && a_zero > 0)
+        }
+        else
+        {
+            for (int i = binary_b.size() - 1; i > -1; i--)
             {
-                binary_new.push_back(false);
-                a_zero--;
-            }
-            else if (*it2 == true && a_one == 0)
-            {
-                binary_new.push_back(false);
-            }
-            else if (*it2 == false && a_zero == 0)
-            {
-                binary_new.push_back(true);
-            }
-            else{
-
+                if (binary_b[i] == true && a_one > 0)
+                {
+                    // cout << "Hello \n";
+                    binary_new[i] = true;
+                    a_one--;
+                }
+                else if (binary_b[i] == false && a_zero > 0)
+                {
+                    binary_new[i] = false;
+                    a_zero--;
+                }
+                else if (binary_b[i] == true && a_one == 0)
+                {
+                    binary_new[i] = false;
+                }
+                else if (binary_b[i] == false && a_zero == 0)
+                {
+                    binary_new[i] = true;
+                }
+                else
+                {
+                }
             }
         }
 
@@ -91,7 +129,7 @@ class Algo1
         print_vector(binary_a);
         print_vector(binary_new);
         cout << "\n" << sum << "\n" << "\n";
-        cin >> a;
+        // cin >> a;
         return sum;
     }
 
