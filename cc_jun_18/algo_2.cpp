@@ -7,132 +7,10 @@ using namespace std;
 
 class Algo1
 {
+  private:
+    int count, a, b, c;
 
-  public:
-    int distance(int a, int b, int count)
-    {
-        if (a == b)
-        {
-            return count;
-        }
-        int num = decToBinary(a, b, a > b);
-        count++;
-        if (num == b)
-        {
-            return count;
-        }
-        count++;
-        count++;
-        distance(num + 1, b, count);
-    }
-
-  public:
-    int decToBinary(int a, int b, bool a_g_b)
-    {
-        int sum = 0, b_one = 0, b_zero = 0, a_one = 0, a_zero = 0;
-        vector<bool> binary_b, binary_new, binary_a;
-        while (b > 0 || a > 0)
-        {
-            if (a % 2 != 0 && a > 0)
-            {
-                binary_a.push_back(true);
-                a_one++;
-            }
-
-            else
-            {
-                binary_a.push_back(false);
-                a_zero++;
-            }
-
-            if (b % 2 != 0 && b > 0)
-            {
-                binary_b.push_back(true);
-            }
-            else
-            {
-                binary_b.push_back(false);
-            }
-            binary_new.push_back(false);
-            a = a / 2;
-            b = b / 2;
-        }
-
-        if (a_g_b == true)
-        {
-            binary_new.clear();
-            std::vector<bool>::iterator it2;
-            for (it2 = binary_b.begin(); it2 != binary_b.end(); ++it2)
-            {
-
-                if (*it2 == true && a_one > 0)
-                {
-                    binary_new.push_back(true);
-                    a_one--;
-                }
-                else if (*it2 == false && a_zero > 0)
-                {
-                    binary_new.push_back(false);
-                    a_zero--;
-                }
-                else if (*it2 == true && a_one == 0)
-                {
-                    binary_new.push_back(false);
-                }
-                else if (*it2 == false && a_zero == 0)
-                {
-                    binary_new.push_back(true);
-                }
-                else
-                {
-                }
-            }
-        }
-        else
-        {
-            for (int i = binary_b.size() - 1; i > -1; i--)
-            {
-                if (binary_b[i] == true && a_one > 0)
-                {
-                    // cout << "Hello \n";
-                    binary_new[i] = true;
-                    a_one--;
-                }
-                else if (binary_b[i] == false && a_zero > 0)
-                {
-                    binary_new[i] = false;
-                    a_zero--;
-                }
-                else if (binary_b[i] == true && a_one == 0)
-                {
-                    binary_new[i] = false;
-                }
-                else if (binary_b[i] == false && a_zero == 0)
-                {
-                    binary_new[i] = true;
-                }
-                else
-                {
-                }
-            }
-        }
-
-        for (int i = 0; i < binary_new.size(); i++)
-        {
-
-            if (binary_new[i] == true)
-            {
-                sum += pow(2, i);
-            }
-        }
-        print_vector(binary_b);
-        print_vector(binary_a);
-        print_vector(binary_new);
-        cout << "\n" << sum << "\n" << "\n";
-        // cin >> a;
-        return sum;
-    }
-
+    // This function print vector
   public:
     void print_vector(vector<bool> binary_b)
     {
@@ -144,6 +22,72 @@ class Algo1
         cout << "\n";
     }
 
+    // This function performs action 1
+  private:
+    void leading_zeros()
+    {
+    }
+
+  private:
+    vector<bool> lay_digits()
+    {
+        vector<bool> binary_a;
+
+        return binary_a;
+    }
+
+    // This function performs action 2
+  private:
+    void shuffle()
+    {
+    }
+    // This function perfroms action 3
+  private:
+    void add_one()
+    {
+        a += 1;
+        count++;
+    }
+
+    //  This is recursive function for number of operation calculator
+  private:
+    int distance()
+    {
+        if (operations() != -2)
+        {
+            return count;
+        }
+        if ((a - b) < 3)
+        {
+            add_one();
+            if (operations() != -2)
+            {
+                return count;
+            }
+            add_one();
+            if (operations() != -2)
+            {
+                return count;
+            }
+        }
+        vector<bool> binary_a = lay_digits();
+    }
+
+    // This function return distance if their
+  private:
+    int operations()
+    {
+        if (a == b)
+        {
+            return count;
+        }
+        return -2;
+        if (count == 1000)
+        {
+            return -1;
+        }
+    }
+
   public:
     void main()
     {
@@ -151,9 +95,10 @@ class Algo1
         cin >> test_cases;
         for (int i = 0; i < test_cases; i++)
         {
-            int a, b;
+            count = 0;
             cin >> a >> b;
-            cout << distance(a, b, 0) << "\n";
+            c = a;
+            cout << distance() << "\n";
         }
     }
 };
