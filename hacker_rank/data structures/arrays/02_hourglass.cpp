@@ -48,12 +48,10 @@ class HourGlass{
                 int sum = array[i][j] + array[i][j+1]+ array[i][j+2];
                 sum += array[i+2][j] + array[i+2][j+1]+ array[i+2][j+2];
                 sum += array[i+1][j+1];
-                cout << sum << " ";
                 if (max_sum < sum) {
                     max_sum = sum;
                 }
             }
-            cout << "\n";
         }
         return max_sum;
     }
