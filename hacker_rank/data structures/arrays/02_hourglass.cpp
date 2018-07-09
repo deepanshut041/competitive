@@ -1,4 +1,4 @@
-"""
+/*
 We define an hourglass  to be a subset of values with indices falling in this pattern in 's graphical representation:
 
 Sample Input
@@ -29,11 +29,13 @@ Explanation -> contains the following hourglasses:
 
 Sample Output
 19
-"""
+*/
 #include <iostream>
 #include <vector>
 #include <string>
 
+
+using namespace std;
 
 class HourGlass{
     private:
@@ -43,15 +45,15 @@ class HourGlass{
         for(int i = 0; i < array.size()-2; i ++)
         {
             for(int j = 0; j < array.size()-2; j ++){
-                int sum = array[i][j] + array[i][j+1]+ array[i][j+1];
-                sum += array[i+2][j] + array[i+2][j+1]+ array[i+2][j+1];
+                int sum = array[i][j] + array[i][j+1]+ array[i][j+2];
+                sum += array[i+2][j] + array[i+2][j+1]+ array[i+2][j+2];
                 sum += array[i+1][j+1];
-                
+                cout << sum << " ";
                 if (max_sum < sum) {
                     max_sum = sum;
                 }
-                
             }
+            cout << "\n";
         }
         return max_sum;
     }
@@ -63,17 +65,26 @@ class HourGlass{
         for(int i = 0; i < l; i++)
         {
             vector<int> temp;
-            temp.resize(6);
             for(int i = 0; i < l; i++)
             {
-                cin >> temp[i];
+                int value;
+                cin >> value;
+                temp.push_back(value);
             }
-            arrar.push_back(temp);
+            array.push_back(temp);
         }
 
-        cout << hourglassSum(temp);
+        cout << hourglassSum(array);
     }
     
+};
+ 
+int main()
+{
+    HourGlass hourGlass;
+    hourGlass.main(6);
+    return 0;
 }
+
 
 
