@@ -42,10 +42,10 @@ class ArrayManipulation
         }
         long max = array[0];
         long sum = 0;
-        for(long i= 0; i < array.size(); i++)
+        for (long i = 0; i < array.size(); i++)
         {
             sum += array[i];
-            if(max < sum)
+            if (max < sum)
             {
                 max = sum;
             }
