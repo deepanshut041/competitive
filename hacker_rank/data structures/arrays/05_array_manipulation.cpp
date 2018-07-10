@@ -37,15 +37,17 @@ class ArrayManipulation
         {
             long a, b, k;
             cin >> a >> b >> k;
-            for (long j = a - 1; j < b; j++)
-            {
-                array[j] += k;
-            }
+            array[a - 1] += k;
+            array[b] -= k;
         }
         long max = array[0];
-        for(long i= 0; i < array.size(); i++){
-            if(max < array[i]){
-                max = array[i];
+        long sum = 0;
+        for(long i= 0; i < array.size(); i++)
+        {
+            sum += array[i];
+            if(max < sum)
+            {
+                max = sum;
             }
         }
         cout << max;
