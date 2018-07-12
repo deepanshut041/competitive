@@ -33,11 +33,13 @@ class SinglyLinkedList
         SinglyLinkedListNode *newNode = new SinglyLinkedListNode(value);
         if (!this->head)
         {
-            this->head = newNode;
+            SinglyLinkedListNode *newN = new SinglyLinkedListNode(0);
+            this->head = newN;
+            this->head->next = newNode;
         }
         else
         {
-            SinglyLinkedListNode *node = this->head;
+            SinglyLinkedListNode *node = this->head->next;
             while (node->next != nullptr)
             {
                 node = node->next;
@@ -52,13 +54,15 @@ class SinglyLinkedList
         SinglyLinkedListNode *newNode = new SinglyLinkedListNode(value);
         if (!this->head)
         {
-            this->head = newNode;
+            SinglyLinkedListNode *newN = new SinglyLinkedListNode(0);
+            this->head = newN;
+            this->head->next = newNode;
         }
         else
         {
-            SinglyLinkedListNode *node = this->head;
-            this->head = newNode;
-            this->head->next = node;
+            SinglyLinkedListNode *node = this->head->next;
+            newNode->next = node;
+            this->head->next = newNode;
         }
     }
 
@@ -67,14 +71,7 @@ class SinglyLinkedList
     {
         int count = 1;
         SinglyLinkedListNode *newNode = new SinglyLinkedListNode(value);
-        if (!this->head)
-        {
-            if (pos == 0)
-            {
-                head = newNode;
-            }
-        }
-        else
+        if(this->head)
         {
             SinglyLinkedListNode *node = this->head;
             while (node->next != nullptr)
@@ -94,13 +91,13 @@ class SinglyLinkedList
   public:
     void deletAtPosition(int pos)
     {
-        int count = 0;
-        if (!this->head)
+        int count = 1;
+        if (this->head)
         {
             SinglyLinkedListNode *node = this->head;
             while (node->next != nullptr)
             {
-                if (count == pos - 1)
+                if (count == pos)
                 {
                     node->next = node->next->next;
                     break;
@@ -116,7 +113,7 @@ class SinglyLinkedList
     {
         if (this->head)
         {
-            SinglyLinkedListNode *node = this->head;
+            SinglyLinkedListNode *node = this->head->next;
             cout << node->data << "\n";
             while (node->next != nullptr)
             {
@@ -142,6 +139,7 @@ int main()
         cout << "2: to insert a number at top \n";
         cout << "3: to insert a number at position as: <position> <value> \n";
         cout << "4: to print list \n";
+        cout << "5: to delete a number at position";
         cin >> a;
         switch (a)
         {
@@ -166,6 +164,11 @@ int main()
 
         case 4:
             list->printList();
+            break;
+        case 5:
+            int d;
+            cin >> d;
+            list->deletAtPosition(d);
             break;
 
         default:
