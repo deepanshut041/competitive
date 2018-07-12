@@ -33,13 +33,11 @@ class SinglyLinkedList
         SinglyLinkedListNode *newNode = new SinglyLinkedListNode(value);
         if (!this->head)
         {
-            SinglyLinkedListNode *newN = new SinglyLinkedListNode(0);
-            this->head = newN;
-            this->head->next = newNode;
+            this->head = newNode;
         }
         else
         {
-            SinglyLinkedListNode *node = this->head->next;
+            SinglyLinkedListNode *node = this->head;
             while (node->next != nullptr)
             {
                 node = node->next;
@@ -54,15 +52,13 @@ class SinglyLinkedList
         SinglyLinkedListNode *newNode = new SinglyLinkedListNode(value);
         if (!this->head)
         {
-            SinglyLinkedListNode *newN = new SinglyLinkedListNode(0);
-            this->head = newN;
-            this->head->next = newNode;
+            this->head = newNode;
         }
         else
         {
-            SinglyLinkedListNode *node = this->head->next;
+            SinglyLinkedListNode *node = this->head;
             newNode->next = node;
-            this->head->next = newNode;
+            this->head = newNode;
         }
     }
 
@@ -73,6 +69,11 @@ class SinglyLinkedList
         SinglyLinkedListNode *newNode = new SinglyLinkedListNode(value);
         if(this->head)
         {
+            if (pos == 0) {
+                newNode->next = this->head;
+                this->head = newNode;
+                return;
+            }
             SinglyLinkedListNode *node = this->head;
             while (node->next != nullptr)
             {
@@ -94,7 +95,12 @@ class SinglyLinkedList
         int count = 1;
         if (this->head)
         {
-            SinglyLinkedListNode *node = this->head;
+             SinglyLinkedListNode *node = this->head;
+            if (pos == 0) {
+                this->head = node->next;
+                return;
+            }
+            
             while (node->next != nullptr)
             {
                 if (count == pos)
@@ -113,7 +119,7 @@ class SinglyLinkedList
     {
         if (this->head)
         {
-            SinglyLinkedListNode *node = this->head->next;
+            SinglyLinkedListNode *node = this->head;
             cout << node->data << "\n";
             while (node->next != nullptr)
             {
