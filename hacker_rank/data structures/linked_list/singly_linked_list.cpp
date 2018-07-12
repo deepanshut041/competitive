@@ -90,7 +90,7 @@ class SinglyLinkedList
     }
 
   public:
-    void deletAtPosition(int pos)
+    void deleteAtPosition(int pos)
     {
         int count = 1;
         if (this->head)
@@ -174,7 +174,7 @@ int main()
         case 5:
             int d;
             cin >> d;
-            list->deletAtPosition(d);
+            list->deleteAtPosition(d);
             break;
 
         default:
