@@ -35,6 +35,18 @@ class MaxHeap
         
     }
 
+    private: 
+        void heapSort(int* A, int heap_size){
+            buildMaxHeap(A, heap_size);
+            for( int i = heap_size; i > 1; i--){
+                int temp = A[0];
+                A[0] = A[i - 1];
+                A[i - 1] = temp;
+                heap_size = heap_size - 1;
+                maxHeapify(A, 1, heap_size);
+            }
+        }
+
   private:
     void maxHeapify(int *A, int i, int heap_size)
     {
@@ -68,9 +80,9 @@ class MaxHeap
     int main()
     {
         /* code */
-        int A[] = {5, 3, 17, 10, 84, 19, 6, 22, 9};
+        int A[] = {5, 13, 2, 25, 7, 17, 20, 8, 4};
         int heap_size = sizeof(A) / sizeof(A[0]);
-        buildMaxHeap(A, heap_size);
+        heapSort(A, heap_size);
         for (int i = 0; i < heap_size; i++)
         {
             cout << A[i] << ", ";
