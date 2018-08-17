@@ -16,13 +16,27 @@ class MaxHeap
     {
         return 2 * i + 1;
     }
-    private:
-    int height(int N)
+
+//   private:
+//     int height(int N)
+//     {
+//         return ceil(log2(N + 1)) - 1;
+//     }
+
+  private:
+    void buildMaxHeap(int *A, int heap_size)
     {
-        return ceil(log2(N + 1)) - 1;
+        
+        for(int i = heap_size / 2; i >= 1; i--)
+        {
+            /* code */
+            maxHeapify(A, i, heap_size);
+        }
+        
     }
-  public:
-    void maxHeapify(int* A, int i, int heap_size)
+
+  private:
+    void maxHeapify(int *A, int i, int heap_size)
     {
         int l = left(i);
         int r = right(i);
@@ -33,14 +47,14 @@ class MaxHeap
         {
             largest = l;
         }
-        else{
+        else
+        {
             largest = i;
         }
-        if(A[r - 1] > A[largest - 1] && r <= heap_size)
+        if (A[r - 1] > A[largest - 1] && r <= heap_size)
         {
             largest = r;
         }
-        cout << l << r << heap_size << largest << " \n";
         if (largest != i)
         {
             int temp = A[i - 1];
@@ -54,10 +68,11 @@ class MaxHeap
     int main()
     {
         /* code */
-        int A[] = {27, 17, 3, 16, 13, 10, 1, 5, 7, 12, 4, 8, 9, 0};
-        int heap_size = sizeof(A)/sizeof(A[0]);
-        maxHeapify(A, 3, heap_size);
-        for(int i = 0; i < sizeof(A)/sizeof(A[0]); i++){
+        int A[] = {5, 3, 17, 10, 84, 19, 6, 22, 9};
+        int heap_size = sizeof(A) / sizeof(A[0]);
+        buildMaxHeap(A, heap_size);
+        for (int i = 0; i < heap_size; i++)
+        {
             cout << A[i] << ", ";
         }
         cout << "\n";
