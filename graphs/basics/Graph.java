@@ -20,6 +20,10 @@ public class Graph {
         return verticeArray[v];
     }
 
+    public void addEdgeOrdered(int u, int v){
+        verticeArray[u].add(v);
+    }
+    
     public void addEdge(int u, int v){
         verticeArray[u].add(v);
         verticeArray[v].add(u);
