@@ -25,7 +25,7 @@ public class TopologicalSort {
         boolean visited[] = new boolean[graph.V];
         Stack<Integer> verticeStack = new Stack<>();
         Stack<Integer> sortedStack = new Stack<>();
-        int src = graph.V - 1;
+        int src = 0;
         verticeStack.add(src);
         visited[src] = true;
         while (!verticeStack.isEmpty()) {
@@ -39,6 +39,14 @@ public class TopologicalSort {
                     if (!visited[children]) {
                         verticeStack.add(children);
                         visited[children] = true;
+                    }
+                }
+            }
+            if (verticeStack.isEmpty()) {
+                for (int i = 0; i < visited.length; i++) {
+                    if (!visited[i]) {
+                        verticeStack.add(i);
+                        visited[i] = true;
                     }
                 }
             }
