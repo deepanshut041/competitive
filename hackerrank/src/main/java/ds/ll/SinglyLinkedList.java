@@ -106,6 +106,23 @@ public class SinglyLinkedList {
         return rhead;
     }
 
+    int getNodeReverse(SinglyLinkedListNode head, int positionFromTail) {
+        SinglyLinkedListNode rhead = reverse(head);
+        SinglyLinkedListNode currentNode = rhead;
+        int count = 0;
+        while (currentNode.next != null){
+            if(count == positionFromTail){
+                return currentNode.data;
+            }
+
+            count ++;
+            currentNode = currentNode.next;
+
+        }
+
+        return currentNode.data;
+    }
+
     public SinglyLinkedListNode removeDuplicates(SinglyLinkedListNode head) {
         SinglyLinkedListNode currentNode = head;
         while (currentNode.next != null){
