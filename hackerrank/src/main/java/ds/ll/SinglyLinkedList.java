@@ -58,6 +58,25 @@ public class SinglyLinkedList {
         return head;
     }
 
+    SinglyLinkedListNode deleteNode(SinglyLinkedListNode head, int position) {
+        if(position == 0)
+            head = head.next;
+        else {
+            SinglyLinkedListNode currentNode = head;
+            int count = 1;
+            while (currentNode.next != null){
+                if(count == position){
+                    currentNode.next = currentNode.next.next;
+                    break;
+                }
+                currentNode = currentNode.next;
+                count++;
+            }
+
+        }
+        return head;
+    }
+
     public static void main(String args[]) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int n = Integer.parseInt(br.readLine());
