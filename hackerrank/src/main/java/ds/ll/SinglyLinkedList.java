@@ -3,6 +3,9 @@ package ds.ll;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 
 public class SinglyLinkedList {
 
@@ -118,6 +121,22 @@ public class SinglyLinkedList {
             }
         }
         return head;
+    }
+
+    public boolean hasCycle(SinglyLinkedListNode head) {
+        int count = 0;
+        Set<SinglyLinkedListNode> nodeSet = new HashSet<>();
+        SinglyLinkedListNode currentNode = head;
+        while (currentNode.next != null){
+            nodeSet.add(currentNode);
+            count ++;
+            if(count != nodeSet.size()){
+                return true;
+            }
+            currentNode = currentNode.next;
+        }
+        nodeSet.add(currentNode);
+        return false;
     }
 
     public boolean compareLists(SinglyLinkedListNode head1, SinglyLinkedListNode head2) {
