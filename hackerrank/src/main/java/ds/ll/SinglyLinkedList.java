@@ -93,6 +93,17 @@ public class SinglyLinkedList {
         System.out.print(str);
     }
 
+    SinglyLinkedListNode reverse(SinglyLinkedListNode head) {
+        SinglyLinkedListNode rhead = null;
+        SinglyLinkedListNode currentNode = head;
+        while (currentNode.next != null){
+            rhead = insertNodeAtHead(rhead, currentNode.data);
+            currentNode = currentNode.next;
+        }
+        rhead = insertNodeAtHead(rhead, currentNode.data);
+        return rhead;
+    }
+
     public static void main(String args[]) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int n = Integer.parseInt(br.readLine());
