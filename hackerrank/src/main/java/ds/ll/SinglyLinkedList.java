@@ -77,6 +77,22 @@ public class SinglyLinkedList {
         return head;
     }
 
+    void reversePrint(SinglyLinkedListNode head) {
+        StringBuilder builder = new StringBuilder();
+        SinglyLinkedListNode currentNode = head;
+        builder.append("\n");
+        builder.append(new StringBuilder(currentNode.data + "").reverse().toString());
+        while (currentNode.next != null){
+            currentNode = currentNode.next;
+            builder.append("\n");
+            builder.append(new StringBuilder(currentNode.data + "").reverse().toString());
+        }
+        builder.reverse();
+        String str = builder.toString();
+
+        System.out.print(str);
+    }
+
     public static void main(String args[]) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int n = Integer.parseInt(br.readLine());
