@@ -182,7 +182,29 @@ public class SinglyLinkedList {
 
     }
 
-
+    public int findMergeNode(SinglyLinkedListNode head1, SinglyLinkedListNode head2) {
+        int count = 0;
+        Set<SinglyLinkedListNode> nodeSet = new HashSet<>();
+        SinglyLinkedListNode currentNode1 = head1;
+        SinglyLinkedListNode currentNode2 = head2;
+        while (currentNode1.next != null){
+            nodeSet.add(currentNode1);
+            count ++;
+            currentNode1 = currentNode1.next;
+        }
+        nodeSet.add(currentNode1);
+        count ++;
+        while (currentNode2.next != null){
+            nodeSet.add(currentNode2);
+            count ++;
+            if (count != nodeSet.size()){
+                return currentNode2.data;
+            }
+            currentNode2 = currentNode2.next;
+        }
+        nodeSet.add(currentNode2);
+        return currentNode2.data;
+    }
 
     public static void main(String args[]) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
