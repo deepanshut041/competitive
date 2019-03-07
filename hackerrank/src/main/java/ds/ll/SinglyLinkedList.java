@@ -104,6 +104,22 @@ public class SinglyLinkedList {
         return rhead;
     }
 
+    public static boolean compareLists(SinglyLinkedListNode head1, SinglyLinkedListNode head2) {
+        SinglyLinkedListNode currentNode1 = head1;
+        SinglyLinkedListNode currentNode2 = head2;
+        while (currentNode1.next != null || currentNode2.next != null){
+            if(currentNode1.data != currentNode2.data){
+                return false;
+            }
+            currentNode1 = currentNode1.next;
+            currentNode2 = currentNode2.next;
+            if(currentNode1 == null ^ currentNode2 == null){
+                return false;
+            }
+        }
+        return true;
+    }
+
     public static void main(String args[]) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int n = Integer.parseInt(br.readLine());
