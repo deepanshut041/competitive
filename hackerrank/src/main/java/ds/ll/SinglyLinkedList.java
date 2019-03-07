@@ -104,7 +104,23 @@ public class SinglyLinkedList {
         return rhead;
     }
 
-    public static boolean compareLists(SinglyLinkedListNode head1, SinglyLinkedListNode head2) {
+    public SinglyLinkedListNode removeDuplicates(SinglyLinkedListNode head) {
+        SinglyLinkedListNode currentNode = head;
+        while (currentNode.next != null){
+            if(currentNode.data == currentNode.next.data){
+                if(currentNode.next.next == null){
+                    currentNode.next = null;
+                    break;
+                }
+                currentNode.next = currentNode.next.next;
+            }else{
+                currentNode = currentNode.next;
+            }
+        }
+        return head;
+    }
+
+    public boolean compareLists(SinglyLinkedListNode head1, SinglyLinkedListNode head2) {
         SinglyLinkedListNode currentNode1 = head1;
         SinglyLinkedListNode currentNode2 = head2;
         while (currentNode1.next != null || currentNode2.next != null){
@@ -146,6 +162,8 @@ public class SinglyLinkedList {
         return head3;
 
     }
+
+
 
     public static void main(String args[]) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
