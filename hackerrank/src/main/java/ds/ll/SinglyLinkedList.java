@@ -35,6 +35,29 @@ public class SinglyLinkedList {
         return llist;
     }
 
+    SinglyLinkedListNode insertNodeAtPosition(SinglyLinkedListNode head, int data, int position) {
+        SinglyLinkedListNode node = new SinglyLinkedListNode(data);
+
+        if(head == null)
+            head = node;
+        else{
+            SinglyLinkedListNode currentNode = head;
+            int count = 0;
+            while (currentNode.next != null){
+                count++;
+                if(count == position){
+                    node.next = currentNode.next;
+                    currentNode.next = node;
+                    break;
+                }
+
+                currentNode = currentNode.next;
+            }
+        }
+
+        return head;
+    }
+
     public static void main(String args[]) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int n = Integer.parseInt(br.readLine());
