@@ -8,7 +8,7 @@ public class SinglyLinkedList {
 
     public SinglyLinkedListNode head;
 
-    SinglyLinkedListNode insertNodeAtTail(SinglyLinkedListNode head, int data) {
+    public SinglyLinkedListNode insertNodeAtTail(SinglyLinkedListNode head, int data) {
         SinglyLinkedListNode node = new SinglyLinkedListNode(data);
         if(head == null)
             head = node;
@@ -23,7 +23,7 @@ public class SinglyLinkedList {
 
     }
 
-    SinglyLinkedListNode insertNodeAtHead(SinglyLinkedListNode llist, int data) {
+    public SinglyLinkedListNode insertNodeAtHead(SinglyLinkedListNode llist, int data) {
         SinglyLinkedListNode node = new SinglyLinkedListNode(data);
         if(llist == null)
             llist = node;
@@ -35,7 +35,7 @@ public class SinglyLinkedList {
         return llist;
     }
 
-    SinglyLinkedListNode insertNodeAtPosition(SinglyLinkedListNode head, int data, int position) {
+    public SinglyLinkedListNode insertNodeAtPosition(SinglyLinkedListNode head, int data, int position) {
         SinglyLinkedListNode node = new SinglyLinkedListNode(data);
 
         if(head == null)
@@ -118,6 +118,33 @@ public class SinglyLinkedList {
             }
         }
         return true;
+    }
+
+    public SinglyLinkedListNode mergeLists(SinglyLinkedListNode head1, SinglyLinkedListNode head2) {
+        SinglyLinkedListNode head3 = null;
+        SinglyLinkedListNode currentNode1 = head1;
+        SinglyLinkedListNode currentNode2 = head2;
+        while (currentNode1 != null && currentNode2 != null){
+            if(currentNode1.data < currentNode2.data){
+                head3 = insertNodeAtTail(head3, currentNode1.data);
+                currentNode1 = currentNode1.next;
+            } else{
+                head3 = insertNodeAtTail(head3, currentNode2.data);
+                currentNode2 = currentNode2.next;
+            }
+        }
+
+        while(currentNode1 != null){
+            head3 = insertNodeAtTail(head3, currentNode1.data);
+            currentNode1 = currentNode1.next;
+        }
+        while (currentNode2 != null){
+            head3 = insertNodeAtTail(head3, currentNode2.data);
+            currentNode2 = currentNode2.next;
+        }
+
+        return head3;
+
     }
 
     public static void main(String args[]) throws IOException {
