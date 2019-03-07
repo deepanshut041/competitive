@@ -23,15 +23,23 @@ public class SinglyLinkedList {
 
     }
 
+    SinglyLinkedListNode insertNodeAtHead(SinglyLinkedListNode llist, int data) {
+        SinglyLinkedListNode node = new SinglyLinkedListNode(data);
+        if(llist == null)
+            llist = node;
+        else {
+            node.next = llist;
+            llist = node;
+        }
+
+        return llist;
+    }
+
     public static void main(String args[]) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int n = Integer.parseInt(br.readLine());
 
         SinglyLinkedList linkedList = new SinglyLinkedList();
-        for (int i = 0; i < n; i++) {
-            linkedList.insertNodeAtTail(linkedList.head, Integer.parseInt(br.readLine()));
-        }
-
     }
 }
 
