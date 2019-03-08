@@ -65,8 +65,8 @@ public class HTree {
     }
 
 
+    // Height of tree
     public static int height(Node root) {
-        // Write your code here.
         int l = 0, r = 0;
         if(root.left != null){
             l = 1;
@@ -82,6 +82,20 @@ public class HTree {
             return l;
         else
             return r;
+
+    }
+
+    public static void levelOrder(Node root) {
+        Queue<Node> queue = new LinkedList<>();
+        queue.add(root);
+        while (!queue.isEmpty()){
+            Node node = queue.poll();
+            if( node.left != null)
+                queue.add(node.left);
+            if (node.right != null)
+                queue.add(node.right);
+            System.out.print(node.data + " ");
+        }
 
     }
 
@@ -110,7 +124,7 @@ public class HTree {
             root = insert(root, data);
         }
         scan.close();
-        System.out.println(height(root));
+        levelOrder(root);
     }
 
 }
