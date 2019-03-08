@@ -16,16 +16,44 @@ class Node {
 }
 
 public class HTree {
+    /*
+        Inorder  Traversal (Left, Root, Right)
 
-    // Inorder (Left, Root, Right)
-    //
+        Algorithm Inorder(tree)
+           1. Traverse the left subtree, i.e., call Inorder(left-subtree)
+           2. Visit the root.
+           3. Traverse the right subtree, i.e., call Inorder(right-subtree)
+    */
+    public static void inOrder(Node root) {
+        if(root.left != null)
+            inOrder(root.left);
+        System.out.print(root.data + " ");
+        if(root.right != null)
+            inOrder(root.right);
+    }
 
     /*
-        Postorder (Left, Right, Root)
+        PreOrder Traversal (Left, Right, Root)
 
-        Algorithm postorder(tree)
-            1. Traverse the left subtree, i.e., call Postorder(left-subtree)
-            2. Traverse the right subtree, i.e., call Postorder(right-subtree)
+        Algorithm preOrder(tree)
+           1. Visit the root.
+           2. Traverse the left subtree, i.e., call preOrder(left-subtree)
+           3. Traverse the right subtree, i.e., call PreOrder(right-subtree)
+    */
+    public static void preOrder(Node root) {
+        System.out.print(root.data + " ");
+        if(root.left != null)
+            preOrder(root.left);
+        if(root.right != null)
+            preOrder(root.right);
+    }
+
+    /*
+        PostOrder (Left, Right, Root)
+
+        Algorithm postOrder(tree)
+            1. Traverse the left subtree, i.e., call postOrder(left-subtree)
+            2. Traverse the right subtree, i.e., call postOrder(right-subtree)
             3. Visit the root.
     */
     public static void postOrder(Node root) {
@@ -62,6 +90,10 @@ public class HTree {
         }
         scan.close();
         postOrder(root);
+        System.out.println();
+        preOrder(root);
+        System.out.println();
+        inOrder(root);
         System.out.println();
     }
 
