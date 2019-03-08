@@ -40,7 +40,7 @@ public class HTree {
            2. Traverse the left subtree, i.e., call preOrder(left-subtree)
            3. Traverse the right subtree, i.e., call PreOrder(right-subtree)
     */
-    public static void preOrder(Node root) {
+    private static void preOrder(Node root) {
         System.out.print(root.data + " ");
         if(root.left != null)
             preOrder(root.left);
@@ -56,7 +56,7 @@ public class HTree {
             2. Traverse the right subtree, i.e., call postOrder(right-subtree)
             3. Visit the root.
     */
-    public static void postOrder(Node root) {
+    private static void postOrder(Node root) {
         if(root.left != null)
             postOrder(root.left);
         if(root.right != null)
@@ -64,7 +64,28 @@ public class HTree {
         System.out.print(root.data + " ");
     }
 
-    public static Node insert(Node root, int data) {
+
+    public static int height(Node root) {
+        // Write your code here.
+        int l = 0, r = 0;
+        if(root.left != null){
+            l = 1;
+            l += height(root.left);
+
+        }
+
+        if(root.right != null) {
+            r = 1;
+            r += height(root.right);
+        }
+        if (l > r)
+            return l;
+        else
+            return r;
+
+    }
+
+    private static Node insert(Node root, int data) {
         if(root == null) {
             return new Node(data);
         } else {
@@ -89,12 +110,7 @@ public class HTree {
             root = insert(root, data);
         }
         scan.close();
-        postOrder(root);
-        System.out.println();
-        preOrder(root);
-        System.out.println();
-        inOrder(root);
-        System.out.println();
+        System.out.println(height(root));
     }
 
 }
