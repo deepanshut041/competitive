@@ -1,7 +1,6 @@
 package ds.trees;
 
 import java.util.*;
-import java.io.*;
 
 class Node {
     Node left;
@@ -14,6 +13,15 @@ class Node {
         right = null;
     }
 }
+class NodeKey{
+    Node node;
+    int key;
+
+    public NodeKey(Node node, int key) {
+        this.node = node;
+        this.key = key;
+    }
+}
 
 public class HTree {
     /*
@@ -24,7 +32,7 @@ public class HTree {
            2. Visit the root.
            3. Traverse the right subtree, i.e., call Inorder(right-subtree)
     */
-    public static void inOrder(Node root) {
+    private static void inOrder(Node root) {
         if(root.left != null)
             inOrder(root.left);
         System.out.print(root.data + " ");
@@ -66,7 +74,7 @@ public class HTree {
 
 
     // Height of tree
-    public static int height(Node root) {
+    private static int height(Node root) {
         int l = 0, r = 0;
         if(root.left != null){
             l = 1;
@@ -85,7 +93,7 @@ public class HTree {
 
     }
 
-    public static void levelOrder(Node root) {
+    private static void levelOrder(Node root) {
         Queue<Node> queue = new LinkedList<>();
         queue.add(root);
         while (!queue.isEmpty()){
@@ -96,7 +104,30 @@ public class HTree {
                 queue.add(node.right);
             System.out.print(node.data + " ");
         }
+    }
 
+    private static void topView(Node root) {
+        Queue<NodeKey> mqueue = new LinkedList<>();
+        mqueue.add(new NodeKey(root, 0));
+        TreeMap<Integer, Queue<Node>> treeMap = new TreeMap<>();
+        while (!mqueue.isEmpty()){
+            NodeKey node = mqueue.poll();
+            if (node.node.left != null){
+                mqueue.add(new NodeKey(node.node.left, node.key - 1));
+            }
+            if (node.node.right != null){
+                mqueue.add(new NodeKey(node.node.right, node.key + 1));
+            }
+
+            if(!treeMap.containsKey(node.key))
+                treeMap.put(node.key, new LinkedList<>());
+            treeMap.get(node.key).add(node.node);
+        }
+
+        for(Map.Entry<Integer, Queue<Node>> m:treeMap.entrySet()){
+            if(m.getValue().peek() != null)
+                System.out.print(m.getValue().peek().data + " ");
+        }
     }
 
     private static Node insert(Node root, int data) {
@@ -124,7 +155,7 @@ public class HTree {
             root = insert(root, data);
         }
         scan.close();
-        levelOrder(root);
+        topView(root);
     }
 
 }
