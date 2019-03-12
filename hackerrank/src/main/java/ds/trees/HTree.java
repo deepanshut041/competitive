@@ -81,7 +81,6 @@ public class HTree {
             l += height(root.left);
 
         }
-
         if(root.right != null) {
             r = 1;
             r += height(root.right);
@@ -90,7 +89,6 @@ public class HTree {
             return l;
         else
             return r;
-
     }
 
     private static void levelOrder(Node root) {
