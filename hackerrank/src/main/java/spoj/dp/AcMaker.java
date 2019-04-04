@@ -53,8 +53,8 @@ class ACMakerSolver {
 
         int result = finder();
 
-        if (result == 0) string.append(ab + " is not a valid abbreviation\n");
-        else string.append(ab + " can be formed in " + res + " ways\n");
+//        if (result == 0) string.append(ab + " is not a valid abbreviation\n");
+//        else string.append(ab + " can be formed in " + res + " ways\n");
 
         return "Words";
     }
