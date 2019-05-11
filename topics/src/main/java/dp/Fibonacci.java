@@ -14,8 +14,6 @@ public class Fibonacci {
         mLookup = new int[n + 1];
         tLookup = new int[n + 1];
         System.out.println("Recursive Fib:" + rFib(n));
-        System.out.println("Memoization Fib:" + mFib(n));
-        System.out.println("Tabulation Fib:" + tFib(n));
     }
 
     private static int tFib(int n) {
