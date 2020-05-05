@@ -14,4 +14,9 @@
 - [Heap](./heap)
 - [Math](./math)
 
+## Challenges
+
+- [May 2020](./challenges/may)
+- [June 2020](./challenges/june)
+
 ---

@@ -4,10 +4,10 @@
 
 | Name | Link | Status | Solution |
 |:-:|:-:|:-:|:-:|
-| Two Sum  | [Problem Link](https://leetcode.com/problems/two-sum/) |  :red_circle: | - |
-| Best Time to Buy and Sell Stock  | [Problem Link](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/) |  :red_circle: | - |
-| Contains Duplicate  | [Problem Link](https://leetcode.com/problems/contains-duplicate/) |  :red_circle: | - |
-| Product of Array Except Self  | [Problem Link](https://leetcode.com/problems/product-of-array-except-self/) |  :red_circle: | - |
+| Two Sum  | [Problem Link](https://leetcode.com/problems/two-sum/) |  :green_circle: | [Solution](./two-sum.md) |
+| Best Time to Buy and Sell Stock  | [Problem Link](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/) |  :green_circle: | [Solution](./best-time-to-buy-and-sell-stock.md) |
+| Contains Duplicate  | [Problem Link](https://leetcode.com/problems/contains-duplicate/) |  :green_circle: | [Solution](./contains-duplicate.md) |
+| Product of Array Except Self  | [Problem Link](https://leetcode.com/problems/product-of-array-except-self/) |  :yellow_circle: | [Solution](./product-of-array-except-self.md) |
 | Maximum Subarray  | [Problem Link](https://leetcode.com/problems/maximum-subarray/) |  :red_circle: | - |
 | Maximum Product Subarray  | [Problem Link](https://leetcode.com/problems/maximum-product-subarray/) |  :red_circle: | - |
 | Find Minimum in Rotated Sorted Array  | [Problem Link](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/) |  :red_circle: | - |
