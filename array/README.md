@@ -11,7 +11,7 @@
 | Maximum Subarray  | [Problem Link](https://leetcode.com/problems/maximum-subarray/) |  :green_circle: | [Solution](./maximum-subarray.md) | :yellow_circle: |
 | Maximum Product Subarray  | [Problem Link](https://leetcode.com/problems/maximum-product-subarray/) |  :green_circle: | [Solution](./maximum-product-subarray.md) | :yellow_circle: |
 | Find Minimum in Rotated Sorted Array  | [Problem Link](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/) |  :green_circle: | [Solution](./find-minimum-in-rotated-sorted-array.md) | :yellow_circle: |
-| Search in Rotated Sorted Array  | [Problem Link](https://leetcode.com/problems/search-in-rotated-sorted-array/) |  :red_circle: | - | - |
+| Search in Rotated Sorted Array  | [Problem Link](https://leetcode.com/problems/search-in-rotated-sorted-array/) |  :green_circle: | [Solution](./search-in-rotated-sorted-array.md) | :yellow_circle: |
 | 3Sum  | [Problem Link](https://leetcode.com/problems/3sum/) |  :red_circle: | - | - |
 | Container With Most Water  | [Problem Link](https://leetcode.com/problems/container-with-most-water/) |  :red_circle: | - | - |
 
