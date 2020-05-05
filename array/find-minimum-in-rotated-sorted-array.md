@@ -21,7 +21,7 @@ You may assume no duplicate exists in the array.
 
 ## Binary Search
 
-### Complexity Hashmap
+### Complexity Bn
 
 - Time: O(log(n))
 - Space: O(1)
