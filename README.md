@@ -11,9 +11,9 @@
         </a>
     </li>
     <li style="display:inline;">
-        <a href="./binary-search">
+        <a href="./bit-manipulation">
             <button style="width:240px; height: 120px; border-radius:10px; background:linear-gradient(120deg, #ABDCFF, #0396FF); border: transparent; margin:5px">
-                <span style="font-size:26px; color:white; height:100px;">Binary<br>Search</span>
+                <span style="font-size:26px; color:white; height:100px;">Bit<br> Manupulation</span>
             </button>
         </a>
     </li>
