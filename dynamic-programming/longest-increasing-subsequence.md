@@ -23,7 +23,7 @@ Could you improve it to O(n log n) time complexity?
 
 ### Complexity
 
-- Time: O(n)
+- Time: O(n2)
 - Space: O(n)
 
 ```Java
