@@ -1,4 +1,4 @@
-theme: midnight
+theme: jekyll-theme-midnight
 title: Competitive programming
 show_downloads: false
 description: This Repository contains solutions to Leetcode, Codechef... questions
