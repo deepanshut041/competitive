@@ -4,7 +4,7 @@
 
 Given an array nums of n integers where n > 1,  return an array output such that output[i] is equal to the product of all the elements of nums except nums[i].
 
-    Example:
+### Example
 
     Input:  [1,2,3,4]
     Output: [24,12,8,6]
@@ -23,7 +23,7 @@ Could you solve it with constant space complexity? (The output array does not co
 
 ## With Divison
 
-### Complexity wd
+### Complexity With Divison
 
 - Time: O(n)
 - Space: O(n)
@@ -52,7 +52,7 @@ public int[] productExceptSelf(int[] nums) {
 
 ## Without Divison
 
-### Complexity wod
+### Complexity Without Divison
 
 - Time: O(n)
 - Space: O(n)

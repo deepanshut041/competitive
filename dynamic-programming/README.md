@@ -4,11 +4,11 @@
 
 | Name | Link | Status | Solution |
 |:-:|:-:|:-:|:-:|
-| Climbing Stairs | [Problem Link](https://leetcode.com/problems/climbing-stairs/) |  :red_circle: | - |
-| Coin Change | [Problem Link](https://leetcode.com/problems/coin-change/) |  :red_circle: | - |
-| Longest Increasing Subsequence | [Problem Link](https://leetcode.com/problems/longest-increasing-subsequence/) |  :red_circle: | - |
-| Longest Common Subsequence | [Problem Link](https://leetcode.com/problems/longest-increasing-subsequence/) |  :red_circle: | - |
-| Word Break Problem | [Problem Link](https://leetcode.com/problems/word-break/) |  :red_circle: | - |
+| Climbing Stairs | [Problem Link](https://leetcode.com/problems/climbing-stairs/) | :heavy_check_mark: | [Solution](./climbing-stairs.md) | :star: |
+| Coin Change | [Problem Link](https://leetcode.com/problems/coin-change/) |  :heavy_check_mark: | [Solution](./coin-change.md) | :star: :star: |
+| Longest Increasing Subsequence | [Problem Link](https://leetcode.com/problems/longest-increasing-subsequence/) |  :heavy_check_mark: | [Solution](./longest-increasing-subsequence.md) | :star: :star: |
+| Longest Common Subsequence | [Problem Link](https://leetcode.com/problems/longest-common-subsequence/) |  :heavy_check_mark: | [Solution](./longest-common-subsequence.md) | :star: :star: |
+| Word Break Problem | [Problem Link](https://leetcode.com/problems/word-break/) |  :heavy_check_mark: | [Solution](./word-break.md) | :star: :star: |
 | Combination Sum | [Problem Link](https://leetcode.com/problems/combination-sum-iv/) |  :red_circle: | - |
 | House Robber | [Problem Link](https://leetcode.com/problems/house-robber/) |  :red_circle: | - |
 | House Robber II | [Problem Link](https://leetcode.com/problems/house-robber-ii/) |  :red_circle: | - |

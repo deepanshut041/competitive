@@ -8,14 +8,14 @@ Given an array nums of n integers, are there elements a, b, c in nums such that 
 
 The solution set must not contain duplicate triplets.
 
-    Example:
+### Example
 
     Given array nums = [-1, 0, 1, 2, -1, -4],
 
     A solution set is:
     [
-    [-1, 0, 1],
-    [-1, -1, 2]
+        [-1, 0, 1],
+        [-1, -1, 2]
     ]
 
 ## Hash Solution(TLE)
@@ -53,7 +53,7 @@ public List<List<Integer>> threeSum(int[] nums) {
 
 ## Optimal Solution
 
-### Complexity Opt
+### Complexity Optimal Solution
 
 - Time: O(n2)
 - Space: O(1)

@@ -6,7 +6,7 @@ Given an array of integers, return indices of the two numbers such that they add
 
 You may assume that each input would have exactly one solution, and you may not use the same element twice.
 
-    Example:
+### Example
 
     Given nums = [2, 7, 11, 15], target = 9,
 
@@ -17,7 +17,7 @@ You may assume that each input would have exactly one solution, and you may not 
 
 In this approach solution was to iterate like bubble sort and try to solve the problem by Brue Force. 
 
-### Complexity BF
+### Complexity Brute Force
 
 - Time: O(n2)
 - Space: O(1)
@@ -41,7 +41,7 @@ public int[] twoSum(int[] nums, int target) {
 
 In this apporoach the solution was to solve the problem using HashMap. Search is O(1) which reduces complexity.
 
-### Complexity HM
+### Complexity HashMap
 
 - Time: O(n)
 - Space: O(n)

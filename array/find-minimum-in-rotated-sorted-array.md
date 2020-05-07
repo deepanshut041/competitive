@@ -1,5 +1,7 @@
 # Find Minimum in Rotated Sorted Array
 
+## Problem
+
 Suppose an array sorted in ascending order is rotated at some pivot unknown to you beforehand.
 
 (i.e.,  [0,1,2,4,5,6,7] might become  [4,5,6,7,0,1,2]).
@@ -8,20 +10,19 @@ Find the minimum element.
 
 You may assume no duplicate exists in the array.
 
-    Example 1:
+### Example 1
 
     Input: [3,4,5,1,2] 
     Output: 1
-<br>
 
-    Example 2:
+### Example 2
 
     Input: [4,5,6,7,0,1,2]
     Output: 0
 
-## Binary Search
+## Optimal Solution
 
-### Complexity Bn
+### Complexity
 
 - Time: O(log(n))
 - Space: O(1)

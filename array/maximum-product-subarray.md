@@ -1,15 +1,16 @@
 # Maximum Product Subarray
 
+## Problem
+
 Given an integer array nums, find the contiguous subarray within an array (containing at least one number) which has the largest product.
 
-    Example 1:
+### Example 1
 
     Input: [2,3,-2,4]
     Output: 6
     Explanation: [2,3] has the largest product 6.
-<br>
 
-    Example 2:
+### Example 2
 
     Input: [-2,0,-1]
     Output: 0
@@ -17,7 +18,7 @@ Given an integer array nums, find the contiguous subarray within an array (conta
 
 ## Optimal Solution
 
-### complexity
+### Complexity
 
 - Time: O(n)
 - Space: O(1)
