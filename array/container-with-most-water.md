@@ -24,7 +24,7 @@ The above vertical lines are represented by array [1,8,6,2,5,4,8,3,7]. In this c
 - Time: O(n)
 - Space: O(1)
 
-```Java
+```java
 public int maxArea(int[] h) {
     int m = 0;
     int l = 0, r = h.length - 1;

@@ -26,7 +26,7 @@ Could you improve it to O(n log n) time complexity?
 - Time: O(n2)
 - Space: O(n)
 
-```Java
+```java
 public int lengthOfLIS(int[] nums) {
     if(nums.length == 0) return 0;
     if(nums.length == 1) return 1;

@@ -23,7 +23,7 @@ Given an integer array nums, find the contiguous subarray within an array (conta
 - Time: O(n)
 - Space: O(1)
 
-```Java
+```java
 public int maxProduct(int[] nums) {
     int p = nums[0];
     int max_p = p;

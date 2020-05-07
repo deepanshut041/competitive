@@ -39,7 +39,7 @@ If there is no common subsequence, return 0.
 - Time: O(nm)
 - Space: O(nm)
 
-```Java
+```java
 public int longestCommonSubsequence(String text1, String text2) {
     int s = 0;
     int[][] dp = new int[text1.length() + 1][text2.length() + 1];

@@ -34,7 +34,7 @@ Given a non-empty string s and a dictionary wordDict containing a list of non-em
 - Time: O(n2)
 - Space: O(nm)
 
-```Java
+```java
 public boolean wordBreak(String s, List<String> wordDict) {
     Set<String> set = new HashSet<>(wordDict);
     boolean dp[] = new boolean[s.length() + 1];

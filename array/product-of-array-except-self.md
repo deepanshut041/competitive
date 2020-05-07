@@ -28,7 +28,7 @@ Could you solve it with constant space complexity? (The output array does not co
 - Time: O(n)
 - Space: O(n)
 
-```Java
+```java
 public int[] productExceptSelf(int[] nums) {
     int[] p = new int[nums.length];
     int tp = 1;
@@ -57,7 +57,7 @@ public int[] productExceptSelf(int[] nums) {
 - Time: O(n)
 - Space: O(n)
 
-```Java
+```java
 public int[] productExceptSelf(int[] nums) {
     int[] p = new int[nums.length];
     p[0] = 1;

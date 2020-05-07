@@ -29,7 +29,7 @@ Note that you cannot sell a stock before you buy one.
 - Time: O(n2)
 - Space: O(1)
 
-```Java
+```java
 
 public int maxProfit(int[] prices) {
     int mp = 0;
@@ -52,7 +52,7 @@ public int maxProfit(int[] prices) {
 - Time: O(n)
 - Space: O(1)
 
-```Java
+```java
 
 public int maxProfit(int[] prices) {
     int mp = 0;

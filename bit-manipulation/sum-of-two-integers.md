@@ -21,7 +21,7 @@ Calculate the sum of two integers a and b, but you are not allowed to use the op
 - Time: O(n)
 - Space: O(1)
 
-```Java
+```java
 public int getSum(int a, int b) {
     if (b == 0) {
         return a;

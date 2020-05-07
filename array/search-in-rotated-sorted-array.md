@@ -29,7 +29,7 @@ Your algorithm's runtime complexity must be in the order of O(log n).
 - Time: O(log(n))
 - Space: O(1)
 
-```Java
+```java
 public int search(int[] nums, int target) {
     int l = 0, r = nums.length - 1;
     while(l <= r) {

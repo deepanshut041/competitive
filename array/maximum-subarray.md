@@ -23,7 +23,7 @@ https://www.youtube.com/watch?v=86CQq3pKSUw
 - Time: O(n)
 - Space: O(1)
 
-```Java
+```java
 public int maxSubArray(int[] nums) {
     int s = nums[0];
     int cs = s;

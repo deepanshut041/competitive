@@ -38,7 +38,7 @@ If this function is called many times, how would you optimize it?
 - Time: O(n)
 - Space: O(1)
 
-``Java
+```java
 public int hammingWeight(int n) {
     int c = 0;
     while(n != 0){

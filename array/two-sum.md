@@ -23,7 +23,6 @@ In this approach solution was to iterate like bubble sort and try to solve the p
 - Space: O(1)
 
 ```java
-
 public int[] twoSum(int[] nums, int target) {
     for(int i=0; i < nums.length - 1; i++ ){
         for(int j=i+1; j < nums.length; j++){
@@ -39,7 +38,7 @@ public int[] twoSum(int[] nums, int target) {
 
 ## HashMap Solution
 
-In this apporoach the solution was to solve the problem using HashMap. Search is O(1) which reduces complexity.
+In this approach the solution was to solve the problem using HashMap. Search is O(1) which reduces complexity.
 
 ### Complexity HashMap
 
@@ -47,7 +46,6 @@ In this apporoach the solution was to solve the problem using HashMap. Search is
 - Space: O(n)
 
 ```java
-
 public int[] twoSum(int[] nums, int target) {
     Map<Integer, Integer> map = new HashMap<>();
     for(int i = 0; i < nums.length; i++){

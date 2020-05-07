@@ -26,7 +26,7 @@ You may assume that you have an infinite number of each kind of coin.
 - Time: O(nm)
 - Space: O(n)
 
-```Java
+```java
 public int coinChange(int[] coins, int amount) {
     int[] dp = new int[amount + 1];
     for(int i=1; i <= amount; i++) dp[i] = amount+1;

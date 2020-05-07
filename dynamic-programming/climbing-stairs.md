@@ -32,7 +32,7 @@ Note: Given n will be a positive integer.
 - Time: O(n)
 - Space: O(n)
 
-```Java
+```java
 public int climbStairs(int n) {
     if(n == 1) return 1;
     int[] m = new int[n + 1];

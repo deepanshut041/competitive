@@ -27,7 +27,7 @@ Given a non negative integer number num. For every numbers i in the range 0 ≤ 
 - Time: O(n)
 - Space: O(1)
 
-```Java
+```java
 public int[] countBits(int num) {
     int[] arr= new int[num + 1]; 
     for(int i = 0; i <= num; i++){

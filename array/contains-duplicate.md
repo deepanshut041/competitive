@@ -28,7 +28,7 @@ Your function should return true if any value appears at least twice in the arra
 - Time: O(n)
 - Space: O(2n)
 
-```Java
+```java
 
 public boolean containsDuplicate(int[] nums) {
     Map<Integer, Integer> map = new HashMap<>();
@@ -48,7 +48,7 @@ public boolean containsDuplicate(int[] nums) {
 - Time: O(n) Faster that hash map
 - Space: O(n)
 
-```Java
+```java
 
 public boolean containsDuplicate(int[] nums) {
     Set<Integer> set = new HashSet<>(nums.length);

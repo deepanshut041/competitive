@@ -27,7 +27,7 @@ You may assume no duplicate exists in the array.
 - Time: O(log(n))
 - Space: O(1)
 
-```Java
+```java
 public int findMin(int[] nums) {
     int l = 0, u = nums.length - 1;
     int m = l + (u - l) /2;

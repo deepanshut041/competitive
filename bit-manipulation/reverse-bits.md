@@ -24,7 +24,7 @@ Reverse bits of a given 32 bits unsigned integer.
 - Time: O(n)
 - Space: O(1)
 
-```Java
+```java
 public int reverseBits(int n) {
     int t = 0;
     for (int i = 0; i < 32; ++i, n >>>= 1) {

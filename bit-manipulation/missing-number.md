@@ -25,7 +25,7 @@ Your algorithm should run in linear runtime complexity. Could you implement it u
 - Time: O(n)
 - Space: O(1)
 
-```Java
+```java
 public int missingNumber(int[] nums) {
     if(nums.length == 0) return 0;
     int s = (nums.length * (nums.length + 1)) / 2;

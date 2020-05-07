@@ -27,7 +27,7 @@ TLE is for [0,0,0 ......] array
 - Time: O(n3)
 - Space: O(n)
 
-```Java
+```java
 public List<List<Integer>> threeSum(int[] nums) {
     Set<List<Integer>> ans = new HashSet<>();
     Map<Integer, List<Integer>> d = new HashMap<>();
@@ -58,7 +58,7 @@ public List<List<Integer>> threeSum(int[] nums) {
 - Time: O(n2)
 - Space: O(1)
 
-```Java
+```java
 public List<List<Integer>> threeSum(int[] nums) {
     List<List<Integer>> ans = new ArrayList<>();
     Arrays.sort(nums);
